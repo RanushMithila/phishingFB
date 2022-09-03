@@ -1,1 +1,1 @@
-alert(flag)
+alert('test')
